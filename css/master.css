@@ -4,6 +4,9 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    -moz-scroll-behavior: smooth;
+    -webkit-scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 :root {
@@ -34,12 +37,6 @@ ul {
 
 a {
     text-decoration: none;
-}
-
-html {
-    -moz-scroll-behavior: smooth;
-    -webkit-scroll-behavior: smooth;
-    scroll-behavior: smooth;
 }
 
 .main-heading h2 {
@@ -1717,7 +1714,7 @@ footer .col:nth-child(2) ul li {
     padding: 20px;
     position: relative;
     color: #b9b9b9;
-
+    transition: var(--main-transitions);
 }
 
 footer .col:nth-child(2) ul li:not(:last-of-type) {
@@ -1735,6 +1732,11 @@ footer .col:nth-child(2) ul li::after {
     color: var(--main-color);
 }
 
+footer .col:nth-child(2) ul li:hover {
+    transform: translateX(10px);
+    color: white;
+}
+
 footer .col:nth-child(1) i {
     margin: 20px 0 30px;
     padding: 20px;
@@ -1747,7 +1749,6 @@ footer .col:nth-child(1) p {
     letter-spacing: 1px;
     line-height: 2;
     font-size: 14px;
-    width: 200px;
 }
 
 footer .col:nth-child(1) h2 {
@@ -1770,4 +1771,23 @@ footer>p {
 
 footer>p a {
     color: #444;
+}
+
+@media (max-width:768px) {
+    footer .col:not(:nth-child(2)) {
+        text-align: center;
+    }
+
+    footer .col:nth-child(2) {
+        margin: auto;
+    }
+
+    footer .col:nth-child(3) .gps,
+    footer .col:nth-child(3) .time {
+        justify-content: center;
+    }
+
+    footer .col:nth-child(2) ul li {
+        width: fit-content;
+    }
 }
